@@ -5,10 +5,10 @@ WORKDIR /app
 COPY go.mod go.sum ./
 RUN go mod download
 COPY *.go ./
-RUN CGO_ENABLED=0 GOOS=linux go build -o guestbook . 
+RUN CGO_ENABLED=0 GOOS=linux go build -o guestbook:v0.1.0 . 
 
 COPY ./public public
 
 EXPOSE 3000
 
-CMD ["./guestbook"]
+CMD ["./guestbook:v0.1.0"]

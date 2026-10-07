@@ -2,11 +2,11 @@ services:
   guestbook:
     build:
       context: ./
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     ports:
       - "3000:3000"
     environment:
-      - REDIS_HOST=redis*
+      - REDIS_HOST=redis
     volumes:
       - ./:/app
     depends_on:
